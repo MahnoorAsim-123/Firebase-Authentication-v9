@@ -1,24 +1,28 @@
-import logo from './logo.svg';
+import Signup from "./Signup";
+import Login from "./Login";
+import Dashboard from "./Dashboard";
 import './App.css';
+import { Route, Routes } from "react-router-dom";
+import Toast from "./toast";
+import Logout from "./Logout";
+import MyTodos from "./MyTodos";
+import Profile from "./Profile";
+import Todos from "./Todos";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+       <Routes>
+         <Route path="/" element={ <Signup /> } />
+         <Route path="/login" element={ <Login /> } />
+         <Route path="/dashboard" element={ <Dashboard /> } />
+         <Route  path="/todos" element={<Todos />} />
+            <Route path="/mytodos" element={<MyTodos />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/logout" element={<Logout />} />
+         <Route path="*" element={<h1>ERROR 404, Page not Found</h1>} />
+       </Routes>
+    </>
   );
 }
 

@@ -1,38 +1,307 @@
-.App {
-  text-align: center;
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.myContainer{
+  /* border: 1px solid black; */
+  background-image: url('./assets/background.jpg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  box-shadow: 20px 23px 57px 0px rgba(0,0,0,0.75);
+  animation: animationColor 8s linear infinite;
+}
+@keyframes animationColor{ 
+
+  0%{
+    background-image: url('./assets/background.jpg');
+  }
+
+  25%{
+    background-image: url('./assets/9.jpg');
+  }
+
+  50%{
+    background-image: url('./assets/8.jpg');
+  }
+  75%{
+    background-image: url('./assets/5.jpg');
+  }
+  100%{
+    background-image: url('./assets/6.jpg');
+  }
+  
+}
+.myform{
+  border: 1px solid #a0a0a0;
+  border-radius: 10px;
+  width: 500px;
+  /* background-color: #fff; */
+  backdrop-filter: blur(25px);
+  padding: 20px 30px;
+}
+.myform h1{
+  color: #fff;
+  margin: 15px 0px;
+  letter-spacing: 1px;
+  font-size: 35px;
+}
+.myform input{
+  padding: 13px 10px;
+  width: 100%;
+  margin: 10px 0px;
+  outline: none;
+  border: 1px solid gray;
+  border-radius: 5px;
+}
+.myform  .signupBtn{
+  padding: 13px 10px;
+  width: 100%;
+  margin: 10px 0px;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  background-color: #0083b0;
   color: white;
+  cursor: pointer;
+  font-size: 17px;
+}
+.myform  .signupBtn:hover{
+  background-color: #04536d;
+  font-weight: bold;
 }
 
-.App-link {
-  color: #61dafb;
+.myform  .loginBtn{
+  padding: 13px 10px;
+  width: 100%;
+  margin: 10px 0px;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  background-color: #0083b0;
+  color: white;
+  cursor: pointer;
+  font-size: 17px;
+}
+.myform  .loginBtn:hover{
+  background-color: #04536d;
+  font-weight: bold;
+}
+.dash{
+  box-shadow: 17px 18px 48px 0px rgba(0,0,0,0.75);
+  background-color: #fff;
+  color: gray !important;
+  width: 100%;
+  padding: 18px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+nav{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.NavLink li {
+  text-decoration: none;
+}
+li{
+  text-decoration: none;
+}
+nav li{
+  list-style: none;
+  margin: 10px;
+  text-decoration: none;
+  /* color: gray; */
+}
+.active{
+  background-color: red;
+  color: aliceblue;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+}
+.prof{
+  text-align: center;
+  font-family: sans-serif;
+  margin-top: 40px;
+  color: blue;
+}
+.datas{
+  text-align: center;
+  font-family: sans-serif;
+  margin-top: 40px;
+  color: gray !important;
+}
+.d{
+  width: 100%;
+  height: 100vh;
+  background-image: url('./assets/background.jpg');
+  background-repeat: no-repeat;
+  background-position: center center;
+   background-size:  cover; 
+}
+.todoss{
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(to right, #36d1dc, #5b86e5);
+}
+.todoss h1{
+  display: flex;
+  justify-content: center;
+  margin-top: 250px;
+  color: white;
+  font-size: 70px;
+}
+.mytodo{
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(to right, #d3959b, #bfe6ba);
+}
+.mytodo h1{
+  display: flex;
+  justify-content: center;
+  margin-top: 250px;
+  color: white;
+  font-size: 70px;
+}
+.profile{
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(to right, #36d1dc, #5b86e5);
+
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.datass{
+  /* border: 1px solid black; */
+  box-shadow: 17px 18px 48px 0px rgba(0,0,0,0.75);
+  width: 500px;
+  background-color: white;
+  border-radius: 5px;
+  padding: 20px 10px;text-align: center;
+  margin: 30px 50px;
 }
+
+/* Animations */
+.zoomIn {
+  -webkit-animation-name: zoomIn;
+  animation-name: zoomIn;
+  -webkit-animation-duration: 3s;
+  animation-duration: 3s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  }
+  @-webkit-keyframes zoomIn {
+  0% {
+  opacity: 0;
+  -webkit-transform: scale3d(.3, .3, .3);
+  transform: scale3d(.3, .3, .3);
+  }
+  50% {
+  opacity: 1;
+  }
+  }
+  @keyframes zoomIn {
+  0% {
+  opacity: 0;
+  -webkit-transform: scale3d(.3, .3, .3);
+  transform: scale3d(.3, .3, .3);
+  }
+  50% {
+  opacity: 1;
+  }
+  }
+
+  .fadeInRight {
+    -webkit-animation-name: fadeInRight;
+    animation-name: fadeInRight;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    }
+    @-webkit-keyframes fadeInRight {
+    0% {
+    opacity: 0;
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+    }
+    100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+    }
+    }
+    @keyframes fadeInRight {
+    0% {
+    opacity: 0;
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+    }
+    100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+    }
+    }
+
+    .lightSpeedIn {
+      -webkit-animation-name: lightSpeedIn;
+      animation-name: lightSpeedIn;
+      -webkit-animation-timing-function: ease-out;
+      animation-timing-function: ease-out;
+      -webkit-animation-duration: 2s;
+      animation-duration: 2s;
+      -webkit-animation-fill-mode: both;
+      animation-fill-mode: both;
+      }
+      @-webkit-keyframes lightSpeedIn {
+      0% {
+      -webkit-transform: translate3d(100%, 0, 0) skewX(-30deg);
+      transform: translate3d(100%, 0, 0) skewX(-30deg);
+      opacity: 0;
+      }
+      60% {
+      -webkit-transform: skewX(20deg);
+      transform: skewX(20deg);
+      opacity: 1;
+      }
+      80% {
+      -webkit-transform: skewX(-5deg);
+      transform: skewX(-5deg);
+      opacity: 1;
+      }
+      100% {
+      -webkit-transform: none;
+      transform: none;
+      opacity: 1;
+      }
+      }
+      @keyframes lightSpeedIn {
+      0% {
+      -webkit-transform: translate3d(100%, 0, 0) skewX(-30deg);
+      transform: translate3d(100%, 0, 0) skewX(-30deg);
+      opacity: 0;
+      }
+      60% {
+      -webkit-transform: skewX(20deg);
+      transform: skewX(20deg);
+      opacity: 1;
+      }
+      80% {
+      -webkit-transform: skewX(-5deg);
+      transform: skewX(-5deg);
+      opacity: 1;
+      }
+      100% {
+      -webkit-transform: none;
+      transform: none;
+      opacity: 1;
+      }
+      }
