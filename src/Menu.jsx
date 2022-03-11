@@ -1,13 +1,38 @@
-import React from "react";
-import { NavLink, Route, Routes } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { NavLink } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "./App.css"
-
 
 const Menu = () => {
 
+    const user = localStorage.getItem("user");
+    const [signout , setSignout] = useState(false);
+    const navigate = useNavigate();
+
+    // console.log(getUser)
+
+    // Redirect
+    useEffect(
+        () => {
+
+            if(!user) {
+                navigate("/")
+            }
+
+        }, [signout]
+    )
+
+
+
+    // Logout
+    const logoutHandlers = () => {
+        localStorage.removeItem("user");
+        // console.log("getUser",user)
+        setSignout(true);
+        // alert("hello")
+    }
+
     return(
-
-
         <>
             <div className="dash">
 
@@ -16,21 +41,20 @@ const Menu = () => {
             </div>
 
             <nav>
-            <NavLink activeClassName="active" to="/todos"><li>TODOS</li></NavLink>
-            <NavLink activeClassName="active" to="/mytodos"><li>MY TODOS</li></NavLink>
-            <NavLink activeClassName="active" to="/profile"><li>PROFILE</li></NavLink> 
+            <NavLink to="/todos"><li>TODOS</li></NavLink>
+            <NavLink  to="/mytodos"><li>MY TODOS</li></NavLink>
+            <NavLink  to="/profile"><li>PROFILE</li></NavLink> 
+            <button className="logoutBtn" onClick={logoutHandlers}>Logout</button> 
             </nav>
 
-            </div>
 
-        <Routes>
             
-        </Routes>
 
 
+
+            </div>
+        
         </>
-
-
 
     )
 
